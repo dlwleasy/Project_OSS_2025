@@ -10,6 +10,7 @@ def main():
         print("2. 지출 목록 보기")
         print("3. 총 지출 보기")
         print("4. 종료")
+        print("5. 하루 소비 평가 이모지")
         choice = input("선택 > ")
 
         if choice == "1":
@@ -31,6 +32,21 @@ def main():
         elif choice == "4":
             print("가계부를 종료합니다.")
             break
+
+        elif choice == "5":
+            try:
+                score = int(input("하루 소비 평가 점수를 입력하세요(0-100점): "))
+                if 0 <= score <= 35:
+                    print("😡 (소비 조심!)")
+                elif 36 <= score <= 60:
+                    print("😊 (괜찮아요~)")
+                elif 61 <= score <= 100:
+                    print("🎉 (훌륭해요!)")
+                else:
+                    print("점수는 0~100 사이로 입력해주세요.\n")
+            except ValueError:
+                print("숫자를 입력해주세요.\n")
+
 
         else:
             print("잘못된 선택입니다.\n")
