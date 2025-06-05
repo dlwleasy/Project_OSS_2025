@@ -10,6 +10,7 @@ def main():
         print("2. 지출 목록 보기")
         print("3. 총 지출 보기")
         print("4. 종료")
+        print("5. 최고 지출 항목")
         choice = input("선택 > ")
 
         if choice == "1":
@@ -31,6 +32,14 @@ def main():
         elif choice == "4":
             print("가계부를 종료합니다.")
             break
+
+        elif choice == "5":
+            if not budget.expenses:
+                print("지출 내역이 없습니다.\n")
+            else:
+                max_expense = max(budget.expenses, key=lambda e: e.amount)
+                print("\n[최고 지출 항목]")
+                print(f"{max_expense}\n")
 
         else:
             print("잘못된 선택입니다.\n")
